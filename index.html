@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Global Solutions – Quick Links</title>
+  <style>
+    /* ===== Reset / base ===== */
+    html, body { margin:0; padding:0; height:auto !important; overflow:visible !important; }
+    body {
+      background:#ffffff;
+      color:#121212;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, sans-serif;
+    }
+    /* ===== Brand variables (gold theme) ===== */
+    :root{
+      --gstc-text: #121212;
+      --gstc-muted:#5f6b7a;
+      --gstc-accent:#d4af37; /* gold */
+      --gstc-border:#e6e8ee;
+      --gstc-radius:12px;
+      --gstc-shadow: 0 8px 24px rgba(20,24,40,.08);
+    }
+    /* ===== Layout wrapper ===== */
+    .gstc-cta{
+      color: var(--gstc-text);
+      padding: clamp(20px, 4vw, 48px);
+    }
+    .gstc-grid{
+      display:grid;
+      gap: 10px; /* tighter spacing so they fit in one row on desktop */
+      grid-template-columns: repeat(3,1fr);
+      align-items: stretch;
+    }
+    @media (max-width: 900px){
+      .gstc-grid{ grid-template-columns: 1fr; }
+    }
+
+    /* ===== Link card ===== */
+    .gstc-card{
+      position: relative;
+      border: 1px solid var(--gstc-border);
+      border-radius: var(--gstc-radius);
+      padding: clamp(16px, 2vw, 24px);
+      background: #fff;
+      box-shadow: var(--gstc-shadow);
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+      text-decoration: none;
+      color: inherit;
+      transition: transform .06s ease, box-shadow .2s ease;
+      min-height: 100%;
+    }
+    .gstc-card:hover{ transform: translateY(-1px); box-shadow: 0 10px 28px rgba(20,24,40,.12); }
+
+    .gstc-card h3{
+      font-size: clamp(18px, 1.4vw, 22px);
+      margin: 4px 0;
+      letter-spacing:.2px;
+    }
+    .gstc-card p{
+      color: var(--gstc-muted);
+      line-height:1.55;
+      margin: 0 0 6px 0;
+    }
+
+    /* Decorative gold corner accents */
+    .gstc-corners::before,
+    .gstc-corners::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:
+        linear-gradient(var(--gstc-accent),var(--gstc-accent)) left top/28px 2px no-repeat,
+        linear-gradient(var(--gstc-accent),var(--gstc-accent)) left top/2px 28px no-repeat,
+        linear-gradient(var(--gstc-accent),var(--gstc-accent)) right top/28px 2px no-repeat,
+        linear-gradient(var(--gstc-accent),var(--gstc-accent)) right top/2px 28px no-repeat,
+        linear-gradient(var(--gstc-accent),var(--gstc-accent)) left bottom/28px 2px no-repeat,
+        linear-gradient(var(--gstc-accent),var(--gstc-accent)) left bottom/2px 28px no-repeat,
+        linear-gradient(var(--gstc-accent),var(--gstc-accent)) right bottom/28px 2px no-repeat,
+        linear-gradient(var(--gstc-accent),var(--gstc-accent)) right bottom/2px 28px no-repeat;
+      opacity:.85;
+      border-radius: inherit;
+    }
+
+    /* Icon circle */
+    .gstc-icon{
+      width:52px; height:52px;
+      border-radius:50%;
+      border:2px solid var(--gstc-accent);
+      display:grid; place-items:center;
+      flex-shrink:0;
+    }
+    .gstc-icon svg{ width:26px; height:26px; fill: var(--gstc-accent); }
+
+    /* Button-look span (still inside the anchor) */
+    .gstc-btn{
+      align-self: start;
+      display:inline-block;
+      padding:9px 13px;
+      border-radius:10px;
+      border: 2px solid var(--gstc-accent);
+      color: var(--gstc-accent);
+      font-weight:600;
+      transition: background .2s ease, color .2s ease;
+    }
+    .gstc-card:hover .gstc-btn{
+      background: var(--gstc-accent);
+      color:#fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="gstc-cta">
+    <div class="gstc-grid">
+
+      <!-- Card 1: Contact (replace # with your Contact page URL when ready) -->
+      <a class="gstc-card" href="#">
+        <div class="gstc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M20.3 7.7a3 3 0 0 0-4.2 0l-2 2-.8-.8a3 3 0 0 0-4.2 4.2l1.2 1.2a1 1 0 0 0 1.4 0l1.3-1.3.7.7-1.3 1.3a2.8 2.8 0 0 1-3.9 0l-1.2-1.2-1.7-1.7a3 3 0 0 1 4.2-4.2l.8.8 1.3-1.3a3 3 0 0 1 4.2 0l.1.1 1.9-1.9a3 3 0 0 1 4.2 4.2l-2.4 2.4-1.4-1.4 2.2-2.3Z"/></svg>
+        </div>
+        <h3>Connect With Us</h3>
+        <p>Explore how we can meet your training needs with integrity, safety, and operational excellence.</p>
+        <span class="gstc-btn">Contact Us</span>
+        <span class="gstc-corners" aria-hidden="true"></span>
+      </a>
+
+      <!-- Card 2: Booking -->
+      <a class="gstc-card" href="https://sites.google.com/view/globalsolutionss/booking?authuser=0">
+        <div class="gstc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 16H5V10h14v10Zm0-12H5V6h14v2Z"/></svg>
+        </div>
+        <h3>Book a Class</h3>
+        <p>Secure your spot in upcoming training sessions and reserve your place on the range.</p>
+        <span class="gstc-btn">Booking</span>
+        <span class="gstc-corners" aria-hidden="true"></span>
+      </a>
+
+      <!-- Card 3: Courses -->
+      <a class="gstc-card" href="https://sites.google.com/view/globalsolutionss/courses?authuser=0">
+        <div class="gstc-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" role="img" aria-hidden="true"><path d="m12 2 2.5 5 5.5.8-4 3.9.9 5.5L12 15.9 7.1 17.2 8 11.7 4 7.8l5.5-.8L12 2Z"/></svg>
+        </div>
+        <h3>Browse Our Courses</h3>
+        <p>Start with Basic Pistol Safety or dive into Active Threat Response—full course list and details here.</p>
+        <span class="gstc-btn">Courses</span>
+        <span class="gstc-corners" aria-hidden="true"></span>
+      </a>
+
+    </div>
+  </div>
+
+</body>
+</html>
